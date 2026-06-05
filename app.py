@@ -6,17 +6,21 @@ from PIL import Image
 import gdown
 import os
 
+# =====================================================
+# PAGE CONFIG (FIRST STREAMLIT COMMAND)
+# =====================================================
+
 st.set_page_config(
     page_title="AI Medical Assistant",
     page_icon="🩺",
     layout="wide"
 )
 
-MODEL_PATH = "vgg16_weights.weights.h5"
+# =====================================================
+# MODEL DOWNLOAD
+# =====================================================
 
-if not os.path.exists(MODEL_PATH):
-    with st.spinner("Downloading AI Model..."):
-        gdown.download(...)
+MODEL_PATH = "vgg16_weights.weights.h5"
 
 if not os.path.exists(MODEL_PATH):
 
@@ -24,10 +28,11 @@ if not os.path.exists(MODEL_PATH):
 
     with st.spinner("Downloading AI Model... Please wait."):
         gdown.download(
-            url,
-            MODEL_PATH,
+            url=url,
+            output=MODEL_PATH,
             quiet=False
         )
+
 # =====================================================
 # PAGE CONFIG
 # =====================================================
