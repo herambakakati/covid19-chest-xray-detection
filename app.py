@@ -1,25 +1,22 @@
 import streamlit as st
+import tensorflow as tf
+import numpy as np
+import cv2
+from PIL import Image
+import gdown
+import os
 
-# MUST BE FIRST STREAMLIT COMMAND
 st.set_page_config(
     page_title="AI Medical Assistant",
     page_icon="🩺",
     layout="wide"
 )
 
-import numpy as np
-import cv2
-from PIL import Image
-
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Flatten, Dense, Dropout
-from tensorflow.keras.applications import VGG16
-from tensorflow.keras.applications.vgg16 import preprocess_input
-
-import os
-import gdown
-
 MODEL_PATH = "vgg16_weights.weights.h5"
+
+if not os.path.exists(MODEL_PATH):
+    with st.spinner("Downloading AI Model..."):
+        gdown.download(...)
 
 if not os.path.exists(MODEL_PATH):
 
