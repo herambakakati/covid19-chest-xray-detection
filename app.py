@@ -1,6 +1,5 @@
 import streamlit as st
 
-# MUST BE FIRST STREAMLIT COMMAND
 st.set_page_config(
     page_title="AI Medical Assistant",
     page_icon="🩺",
@@ -8,6 +7,18 @@ st.set_page_config(
 )
 
 import tensorflow as tf
+
+from tensorflow.keras.applications import VGG16
+from tensorflow.keras.applications.vgg16 import preprocess_input
+
+from tensorflow.keras.models import Sequential
+
+from tensorflow.keras.layers import (
+    Flatten,
+    Dense,
+    Dropout
+)
+
 import numpy as np
 import cv2
 from PIL import Image
