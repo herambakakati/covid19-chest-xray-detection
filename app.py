@@ -10,7 +10,22 @@ from tensorflow.keras.layers import Flatten, Dense, Dropout
 from tensorflow.keras.applications import VGG16
 from tensorflow.keras.applications.vgg16 import preprocess_input
 
+import os
+import gdown
 
+MODEL_PATH = "vgg16_weights.weights.h5"
+
+if not os.path.exists(MODEL_PATH):
+
+    url = "https://drive.google.com/uc?id=1eb-OCycqUVrRrM7BD39miq8Vbwef6DO9"
+
+    with st.spinner("Downloading AI Model... Please wait."):
+
+        gdown.download(
+            url,
+            MODEL_PATH,
+            quiet=False
+        )
 # =====================================================
 # PAGE CONFIG
 # =====================================================
